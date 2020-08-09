@@ -2,14 +2,14 @@ plugins {
     id 'java'
 }
 
-group 'aurelia'
+group 'hennquince'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
 task fatJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'aurelia.bootloader.Main'
+        attributes 'Main-Class': 'hennquince.bootloader.Main'
     }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }

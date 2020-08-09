@@ -1,6 +1,6 @@
-package auleria.bootloader;
+package hennquince.bootloader;
 
-import auleria.bootloader.components.ProgressBar;
+import hennquince.bootloader.components.ProgressBar;
 import launchit.Launchit;
 import launchit.LaunchitConfig;
 import launchit.launcher.LauncherFile;
@@ -24,7 +24,7 @@ public class Main extends JFrame implements ILauncherHandler {
 
     public Main() {
         this.setIconImage(new ImageIcon(getClass().getResource("/images/icon.png")).getImage());
-        this.setTitle("Auleria - Bootloader");
+        this.setTitle("Hennequince - Bootloader");
         this.setSize(440, 200);
         this.setLayout(null);
         this.setLocationRelativeTo(null);
@@ -69,7 +69,7 @@ public class Main extends JFrame implements ILauncherHandler {
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         Font dumbledor;
         try {
-            dumbledor = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("/fonts/dumbledor.ttf")).deriveFont(22f);
+            dumbledor = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("/fonts/marcellus.ttf")).deriveFont(22f);
             ge.registerFont(dumbledor);
         } catch (FontFormatException | IOException e) {
             e.printStackTrace();
@@ -81,8 +81,8 @@ public class Main extends JFrame implements ILauncherHandler {
     public void verify() {
         try {
             it = new LaunchitConfig()
-                    .setManifestUrl("https://launcher-api.auleria-rp.net/manifest")
-                    .setInstallFolder(FilesUtils.getInstallDir(".auleria"))
+                    .setManifestUrl("http://launcher-api.hennequince.fr/manifest")
+                    .setInstallFolder(FilesUtils.getInstallDir(".hennequince"))
                     .create();
 
             boolean isNet = UrlUtils.netIsAvailable(it);
@@ -91,7 +91,7 @@ public class Main extends JFrame implements ILauncherHandler {
                     launch();
                     return;
                 }
-                JOptionPane.showMessageDialog(null, "Aucune connection internet", "Auleria Bootloader Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Aucune connection internet", "Hennequince Bootloader Error", JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
                 return;
             }
@@ -111,7 +111,7 @@ public class Main extends JFrame implements ILauncherHandler {
             arguments.add(OperatingSystem.getCurrentPlatform().getJavaDir());
             arguments.add("-cp");
             arguments.add(it.getLauncherManager().getLauncherFile().getCanonicalPath());
-            arguments.add("auleria.launcher.Launcher");
+            arguments.add("hennequince.launcher.Launcher");
             arguments.add(thisFile.getAbsolutePath());
             ProcessBuilder processBuilder = new ProcessBuilder();
             String.join(" ", arguments);

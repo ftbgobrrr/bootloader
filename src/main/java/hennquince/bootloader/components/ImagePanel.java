@@ -1,4 +1,4 @@
-package auleria.bootloader.components;
+package hennquince.bootloader.components;
 
 import javax.swing.*;
 import java.awt.*;
