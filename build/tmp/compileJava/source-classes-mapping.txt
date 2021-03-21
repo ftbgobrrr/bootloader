@@ -1,7 +1,0 @@
-hennquince/bootloader/Main.java
- hennquince.bootloader.Main
- hennquince.bootloader.Main$1
-hennquince/bootloader/components/ProgressBar.java
- hennquince.bootloader.components.ProgressBar
-hennquince/bootloader/components/ImagePanel.java
- hennquince.bootloader.components.ImagePanel
