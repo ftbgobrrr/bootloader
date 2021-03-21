@@ -81,7 +81,7 @@ public class Main extends JFrame implements ILauncherHandler {
     public void verify() {
         try {
             it = new LaunchitConfig()
-                    .setManifestUrl("http://launcher-api.hennequince.fr/manifest")
+                    .setManifestUrl("https://launcher-api.hennequince.fr/manifest")
                     .setInstallFolder(FilesUtils.getInstallDir(".hennequince"))
                     .create();
 
