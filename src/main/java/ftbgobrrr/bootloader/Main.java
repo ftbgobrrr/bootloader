@@ -1,6 +1,5 @@
-package hennquince.bootloader;
+package ftbgobrrr.bootloader;
 
-import hennquince.bootloader.components.ProgressBar;
 import launchit.Launchit;
 import launchit.LaunchitConfig;
 import launchit.launcher.LauncherFile;
@@ -10,6 +9,9 @@ import launchit.utils.OperatingSystem;
 import launchit.utils.UrlUtils;
 
 import javax.swing.*;
+
+import ftbgobrrr.bootloader.components.ProgressBar;
+
 import java.awt.*;
 import java.io.*;
 import java.net.MalformedURLException;
@@ -24,7 +26,7 @@ public class Main extends JFrame implements ILauncherHandler {
 
     public Main() {
         this.setIconImage(new ImageIcon(getClass().getResource("/images/icon.png")).getImage());
-        this.setTitle("Hennequince - Bootloader");
+        this.setTitle("BTB go brrrrr - Bootloader");
         this.setSize(440, 200);
         this.setLayout(null);
         this.setLocationRelativeTo(null);
@@ -81,8 +83,8 @@ public class Main extends JFrame implements ILauncherHandler {
     public void verify() {
         try {
             it = new LaunchitConfig()
-                    .setManifestUrl("https://launcher-api.hennequince.fr/manifest")
-                    .setInstallFolder(FilesUtils.getInstallDir(".hennequince"))
+                    .setManifestUrl("http://localhost:3000/manifest")
+                    .setInstallFolder(FilesUtils.getInstallDir(".ftbgobrrrrr"))
                     .create();
 
             boolean isNet = UrlUtils.netIsAvailable(it);
@@ -91,7 +93,7 @@ public class Main extends JFrame implements ILauncherHandler {
                     launch();
                     return;
                 }
-                JOptionPane.showMessageDialog(null, "Aucune connection internet", "Hennequince Bootloader Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Aucune connection internet", "FTB GO BRRRRR Bootloader Error", JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
                 return;
             }
@@ -111,7 +113,7 @@ public class Main extends JFrame implements ILauncherHandler {
             arguments.add(OperatingSystem.getCurrentPlatform().getJavaDir());
             arguments.add("-cp");
             arguments.add(it.getLauncherManager().getLauncherFile().getCanonicalPath());
-            arguments.add("hennequince.launcher.Launcher");
+            arguments.add("ftbgobrrr.launcher.Launcher");
             arguments.add(thisFile.getAbsolutePath());
             ProcessBuilder processBuilder = new ProcessBuilder();
             String.join(" ", arguments);

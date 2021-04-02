@@ -1,4 +1,4 @@
-package hennquince.bootloader.components;
+package ftbgobrrr.bootloader.components;
 
 import javax.swing.*;
 import java.awt.*;
